@@ -41,3 +41,55 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Toggle</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <!-- 生成二维码按钮 -->
+  <button onclick="toggleQRCode()">生成/隐藏二维码</button>
+  
+  <!-- 二维码显示容器 -->
+  <div id="qrcode" style="display: none;"></div>
+
+  <script>
+    // 控制二维码是否生成的标志
+    let qrVisible = false;
+
+    // 切换二维码显示与隐藏的函数
+    function toggleQRCode() {
+      const qrContainer = document.getElementById("qrcode");
+
+      if (!qrVisible) {
+        // 显示二维码容器
+        qrContainer.style.display = "block";
+        
+        // 预设的二维码内容
+        const qrContent = "https://liyiqinouyanghui.github.io/diaochawenjuan/";
+
+        // 生成二维码
+        new QRCode(qrContainer, {
+          text: qrContent,
+          width: 128,
+          height: 128,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        
+        qrVisible = true;
+      } else {
+        // 隐藏并清空二维码容器
+        qrContainer.innerHTML = ""; // 清空之前的二维码
+        qrContainer.style.display = "none";
+        qrVisible = false;
+      }
+    }
+  </script>
+</body>
+</html>
