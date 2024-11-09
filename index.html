@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Satisfaction Survey</h1>
+    
+    <form id="surveyForm">
+      <!-- 单选问题 -->
+      <div class="question">
+        <label for="q1">How satisfied are you with our service?</label><br>
+        <input type="radio" id="q1-a1" name="q1" value="Very Satisfied"> Very Satisfied<br>
+        <input type="radio" id="q1-a2" name="q1" value="Satisfied"> Satisfied<br>
+        <input type="radio" id="q1-a3" name="q1" value="Neutral"> Neutral<br>
+        <input type="radio" id="q1-a4" name="q1" value="Dissatisfied"> Dissatisfied<br>
+      </div>
+      
+      <!-- 多选问题 -->
+      <div class="question">
+        <label for="q2">What aspects of our service did you like?</label><br>
+        <input type="checkbox" id="q2-a1" name="q2" value="Quality"> Quality<br>
+        <input type="checkbox" id="q2-a2" name="q2" value="Price"> Price<br>
+        <input type="checkbox" id="q2-a3" name="q2" value="Customer Service"> Customer Service<br>
+      </div>
+
+      <!-- 文字填空问题 -->
+      <div class="question">
+        <label for="q3">Please leave additional comments:</label><br>
+        <textarea id="q3" name="q3" rows="4" cols="50"></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
